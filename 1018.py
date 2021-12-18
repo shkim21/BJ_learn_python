@@ -19,17 +19,11 @@ retouch = 0
 retouch2 = 0
 retouch_list = []
 
-#갯수를 세는 배열 만들어서 최소값 출력하기
-
-#for문 돌면서 8*8 배열 만들어서 ans1, ans2와 비교 후 다른 것 체크 후 갯수 저장
-
-# second_board = [[None]*8 for i in range(8)]
-
 for i in range(N-7):
     for j in range(M-7):
         # second_board = board[i:i+8,j:j+8]
         # second_board = [[board[x][y] for x in range(i, i+8)] for y in range(j, j+8)]
-        second_board = [row[j:j+8] for row in board[i:i+8]]
+        second_board = [row[j:j+8] for row in board[i:i+8]] #####2차원 배열 slicing!!
         # print("second_board:", second_board)
 
         retouch = 0
@@ -50,3 +44,10 @@ for i in range(N-7):
 
 # print("retouch_list:", retouch_list)
 print(min(retouch_list))
+
+#문제풀이 아이디어
+#갯수를 세는 배열 만들어서 최소값 출력하기
+#for문 돌면서 8*8 배열 만들어서 ans1, ans2와 비교 후 다른 것 체크 후 갯수 저장
+#리스트에 각각 ans1과 ans2와의 비교후 다른 것 갯수 저장하기 -> 최소값 반환 <- 정답!
+
+#2차원 배열 슬라이싱!!
