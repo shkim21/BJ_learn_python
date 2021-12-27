@@ -1,8 +1,7 @@
-N = int(input())
+import sys
 
+N = int(sys.stdin.readline())
 class Stack:
-    #s =[]
-
     def __init__(self):
         self.stack = []
 
@@ -21,7 +20,6 @@ class Stack:
     def is_empty(self):
         if self.stack == []:
             return 1
-            
         else:
             return 0
 
@@ -32,20 +30,27 @@ class Stack:
             return self.stack[-1]
 
 s = Stack()
+
 for _ in range(N):
-    a = input()
+    a = sys.stdin.readline()
+    b = a.split()
 
-    if len(a.split()) == 2:
-        s.push(a[5:])
+    if len(b) == 2:
+        s.push(a[5:].strip('\n')) #sys.stdin.readline()으로 받으면 뒤에 \n까지 입력 받게 된다!
 
-    elif a == "pop":
+    elif b[0] == "pop":
         print(s.pop())
 
-    elif a == "size":
+    elif b[0] == "size":
         print(s.size())
 
-    elif a == "empty":
+    elif b[0] == "empty":
         print(s.is_empty())
 
-    elif a == "top":
+    elif b[0] == "top":
         print(s.top())
+
+#입력 받는 것 input() -> sys.stdin.readline()으로 바꾸니깐 시간초과 해결됨,,,!
+#stack in python : list
+#push : append
+#pop : pop() 제일 마지막에 들어간 것 제거 + 반환
