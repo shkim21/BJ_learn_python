@@ -24,3 +24,19 @@ for k in range(w):
 
 # print("rs:", rs)
 print(sum(rs))
+
+###더 간결한 풀이
+h, w = map(int, input().split())
+world = list(map(int, input().split()))
+
+ans = 0
+for i in range(1, w - 1):#포문 하나로 비교!
+    left_max = max(world[:i])#리스트 인덱싱 해서
+    right_max = max(world[i+1:])
+
+    compare = min(left_max, right_max)
+
+    if world[i] < compare:#작을 경우에만 계산!
+        ans += compare - world[i]
+
+print(ans)
