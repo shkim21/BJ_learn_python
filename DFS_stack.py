@@ -81,3 +81,8 @@ def DFS2(start_node):
         #6) children을 stack에 쌓기
         stack.extend(children)
 
+
+
+#DFS를 구현하는 데는 2가지 방법이 있다.
+#1. 재귀를 사용해서 계속 호출하는 경우 : stack.append(a), 함수 재귀 호출
+#2. 스택을 사용해서 while 문을 사용하는 경우 : 빈스택에 추가 후, pop사용

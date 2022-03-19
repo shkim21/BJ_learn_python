@@ -53,7 +53,7 @@ def bfs(a):
             #     return cnts[v]
             # else:
             # print("m:", m)
-            if 0<=m<=100000 and not cnts[m]:#in 써서 시간초과? 와,,, if문 조건 순서도 중요한듯,,, 인덱스 에러 뜸
+            if 0<=m<=100000 and not cnts[m]:#in 써서 시간초과? 와,,, if문 조건 순서도 중요한듯,,, 인덱스 에러 뜸.  not cnts[m] 하는 이유가 0이 아니면 패쓰함. 왜나하면 더 이전 값이 있으니깐.
                 cnts[m] = cnts[v]+1
                 # print("cnts[m]:", cnts[m])
                 queue.append(m)#와 순서도 중요하구나,,,!! append 먼저 시키면 뒤에 줄이 실행이 안됨! 바로 while queue 실행됨
