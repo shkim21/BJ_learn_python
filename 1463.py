@@ -1,5 +1,6 @@
 N = int(input())
 
+#메모이제이션
 memo = [0]*(N+1)
 
 for i in range(2, N+1):#1, 2, 3,,,
@@ -21,3 +22,8 @@ for i in range(2, N+1):#1, 2, 3,,,
 # print("memo:", memo)
 ans = memo[N]
 print(ans)
+
+
+#DP 아이디어 : 뒤에서 앞으로 가야 한다!
+#인덱스 안에서 연산 하는 아이디어
+#이전 연산에서 1 횟수 늘려준 게 다음 연산임

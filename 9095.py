@@ -13,3 +13,5 @@ def sol(n):
 for _ in range(T):
     n = int(input())
     print(sol(n))
+
+#이 점화식을 발견을 못하면 어렵지 않나,,,
